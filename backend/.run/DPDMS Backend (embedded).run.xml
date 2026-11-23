@@ -1,0 +1,11 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="DPDMS Backend (embedded)" type="Application" factoryName="Application">
+    <option name="MAIN_CLASS_NAME" value="com.itzetech.dpdms.DpdmsBackendApplication" />
+    <module name="dpdms-backend" />
+    <option name="VM_PARAMETERS" value="-Dspring.profiles.active=embedded" />
+    <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

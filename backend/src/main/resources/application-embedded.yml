@@ -1,0 +1,13 @@
+# Runs PostgreSQL inside the application: no database to install. For development only.
+# The port and the data folder can be changed with the environment variables EMBEDDED_PG_PORT and EMBEDDED_PG_DATA
+# (for example to run a second copy of the backend next to the first one without sharing its database).
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:${app.embedded.port}/dpdms
+    username: postgres
+    password: postgres
+app:
+  embedded:
+    port: ${EMBEDDED_PG_PORT:5433}
+    data-dir: ${EMBEDDED_PG_DATA:.pgdata}
+  expose-secrets: true

@@ -1,0 +1,15 @@
+# build output
+backend/target/
+frontend/dist/
+frontend/.angular/
+frontend/node_modules/
+
+# local data and settings
+backend/.pgdata/
+*.log
+.env
+.dev-credentials
+*-run.log
+.idea/
+.vscode/
+.DS_Store

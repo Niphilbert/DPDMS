@@ -1,0 +1,23 @@
+# PostgreSQL for local development, if you prefer a normal database server to the built-in one.
+#   docker compose up -d
+# Then run the backend WITHOUT the "embedded" profile; its defaults already match these settings.
+services:
+  db:
+    image: postgres:16
+    container_name: dpdms-db
+    environment:
+      POSTGRES_DB: dpdms
+      POSTGRES_USER: dpdms
+      POSTGRES_PASSWORD: dpdms
+    ports:
+      - "5432:5432"
+    volumes:
+      - dpdms-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U dpdms -d dpdms"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+volumes:
+  dpdms-data:
